@@ -2,8 +2,19 @@
 # and return true if all the letters from the second string are contained within
 # the first string, and false otherwise.
 
+# Hi! Whoever is checking this, please tell me if there is a shorter way, 
+#  and why did I need the the @'s.  THanks!
 def mutation?(base_word, mutation)
-
+  x = mutation.split('')
+  x.each do |letter|
+    if base_word.include?(letter)
+      @answer = true
+    else 
+      @answer = false
+      break
+    end
+  end  
+  @answer
 end
 
 # Driver code - don't touch anything below this line.
