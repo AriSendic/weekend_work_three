@@ -32,3 +32,48 @@ end
 # The add_a_crib method
 # The add_a_custom_amenity method
 
+x = HotelReservation.new(customer_name: "Ty Cobb", date: "6/17", room_number: "453")
+
+p "Testing room_number..."
+x.room_number = "452"
+result = x.room_number 
+if result == "452"
+  puts "pass"
+else
+  puts "Your'e the worst coder ever!"
+end
+
+p "Testing add_a_fridge..."
+x.add_a_fridge
+result = x.amenities
+if x.amenities.include?("fridge")
+  puts "pass"
+else
+  puts "Your'e the worst coder ever!"
+end
+
+p "Testing add_a_crib..."
+x.add_a_crib
+result = x.amenities
+if x.amenities.include?("fridge")
+  if x.amenities.include?("crib")
+    puts "pass"
+  else
+    puts "Your'e the worst coder ever!"
+  end
+else
+  p "Your'e the worst coder ever!"
+end  
+
+p "Testing add_a_custom_amenity..."
+x.add_a_custom_amenity("microwave")
+result = x.amenities.length
+if result == 3
+  if x.amenities.include?("microwave") 
+    puts "pass"
+  else
+    p "You're the worst coder ever!"
+  end
+else
+  p "You're the worst coder ever!"
+end  
